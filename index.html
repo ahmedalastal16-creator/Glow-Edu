@@ -174,7 +174,7 @@
 <script>
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
 
-    const API_KEY = "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";
+    const API_KEY = "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";
     let pdfText = "", chatHistory = [], selectedImageBase64 = null, rClicks = 0;
     let currentChatId = Date.now(), isWebSearch = false;
     let typingInterval = null, isTyping = false;
@@ -290,6 +290,8 @@
                 body: JSON.stringify({ model: "google/gemini-2.0-flash-001", messages: messages })
             });
 
+
+
             const data = await response.json();
             if (typing.parentNode) chatBox.removeChild(typing);
             const aiRes = data.choices[0].message.content;
@@ -367,3 +369,6 @@
     function logoutAdmin() { sessionStorage.removeItem('Glow_admin_mode'); location.reload(); }
     document.getElementById('rocket-trigger').onclick = () => { rClicks++; if(rClicks >= 3) { closeModal('plusModal'); document.getElementById('adminPanel').style.display = 'flex'; } };
 </script>
+<body>
+<html>
+</body>
